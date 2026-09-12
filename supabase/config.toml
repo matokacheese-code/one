@@ -1,0 +1,4 @@
+project_id = "matoka-sales-dashboard"
+
+[functions.sync-choice]
+verify_jwt = true
