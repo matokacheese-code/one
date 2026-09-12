@@ -1,0 +1,215 @@
+{
+  "schema_version": "0.1",
+  "hub_status": "ACTIVE",
+  "project": {
+    "project_id": "PRJ-MATOKA-SALES-001",
+    "restaurant_id": "RST-MATOKA-PRAGUE-001",
+    "restaurant_name": "MATOKA",
+    "market": "CZ",
+    "hub_revision": 2,
+    "previous_hub_sha256": "ca6e23ead82b57899fd180905bac11bcd5870c21e9af97406136be330e810794",
+    "updated_at": "2026-09-12T16:16:26+04:00"
+  },
+  "current": {
+    "stage": "TECHNICAL_MIGRATION",
+    "stage_status": "COMPLETE",
+    "next_action": "Review pull request and verify live ChoiceQR synchronization",
+    "blocked_by": []
+  },
+  "current_route": {
+    "surface": "CODEX",
+    "model_profile": "STANDARD",
+    "selected_model": "GPT-5.6",
+    "reasoning": "full",
+    "skill": "foodies-work-router",
+    "outcome": "Isolated MATOKA sales dashboard with ChoiceQR synchronization",
+    "done_when": "Build passes, dedicated cloud database is provisioned, and pull request is open",
+    "writeback": "Implementation artifact and completion handoff",
+    "started_at": "2026-09-12T16:08:03+04:00"
+  },
+  "truth_heads": {},
+  "chats": [
+    {
+      "chat_id": "00-CONTROL",
+      "title": "Control",
+      "surface": "CHAT",
+      "purpose": "Approvals and routing",
+      "stage": "CONTROL",
+      "model_profile": "STANDARD",
+      "status": "ACTIVE",
+      "last_handoff_id": "HND-20260912-001"
+    },
+    {
+      "chat_id": "01-MATOKA-DASHBOARD",
+      "title": "MATOKA sales dashboard migration",
+      "surface": "CODEX",
+      "purpose": "Build and deliver isolated MATOKA sales dashboard",
+      "stage": "TECHNICAL_MIGRATION",
+      "model_profile": "STANDARD",
+      "status": "COMPLETED",
+      "last_handoff_id": "HND-20260912-001"
+    }
+  ],
+  "evidence": [],
+  "suggestions": [],
+  "decisions": [],
+  "artifacts": [
+    {
+      "artifact_id": "ART-MATOKA-DASHBOARD-001",
+      "scope": "technical.dashboard",
+      "logical_id": "MATOKA_SALES_DASHBOARD",
+      "version": 1,
+      "path": "src/App.tsx",
+      "sha256": "bb6a3682c8c398fdcc35b71fdca7fd34437a02f0e91c4514cd904d02277c1a7a",
+      "status": "DRAFT",
+      "created_by_chat": "01-MATOKA-DASHBOARD",
+      "created_at": "2026-09-12T16:16:26+04:00",
+      "derived_from": [],
+      "requires_current_refs": [],
+      "approval_decision_id": null,
+      "previous_version": null,
+      "supersedes_active": null
+    },
+    {
+      "artifact_id": "ART-MATOKA-SYNC-001",
+      "scope": "technical.choice_sync",
+      "logical_id": "MATOKA_CHOICE_SYNC",
+      "version": 1,
+      "path": "supabase/functions/sync-choice/index.ts",
+      "sha256": "7160492ddd5d236eaced5ff60d157dbb8e3aa52d20350a631ed5315e0f940142",
+      "status": "DRAFT",
+      "created_by_chat": "01-MATOKA-DASHBOARD",
+      "created_at": "2026-09-12T16:16:26+04:00",
+      "derived_from": [],
+      "requires_current_refs": [],
+      "approval_decision_id": null,
+      "previous_version": null,
+      "supersedes_active": null
+    },
+    {
+      "artifact_id": "ART-MATOKA-SCHEMA-001",
+      "scope": "technical.database",
+      "logical_id": "MATOKA_SALES_SCHEMA",
+      "version": 1,
+      "path": "supabase/migrations/20260912120000_create_sales_snapshot.sql",
+      "sha256": "d57f29f4f389918e3b8acfde42cf94f38c4a40b4f5471114f8f8733dac85a88f",
+      "status": "DRAFT",
+      "created_by_chat": "01-MATOKA-DASHBOARD",
+      "created_at": "2026-09-12T16:16:26+04:00",
+      "derived_from": [],
+      "requires_current_refs": [],
+      "approval_decision_id": null,
+      "previous_version": null,
+      "supersedes_active": null
+    }
+  ],
+  "handoffs": [
+    {
+      "handoff_id": "HND-20260912-001",
+      "hub_revision_read": 1,
+      "from_chat": "01-MATOKA-DASHBOARD",
+      "to_chat": "00-CONTROL",
+      "stage": "TECHNICAL_MIGRATION",
+      "route": {
+        "surface": "CODEX",
+        "model_profile": "STANDARD",
+        "selected_model": "GPT-5.6",
+        "reasoning": "full",
+        "skill": "foodies-work-router"
+      },
+      "input_refs": [],
+      "read_set": {
+        "technical.dashboard": null,
+        "technical.choice_sync": null,
+        "technical.database": null
+      },
+      "write_scopes": ["technical.dashboard", "technical.choice_sync", "technical.database"],
+      "truth_head_updates": {},
+      "output_refs": ["ART-MATOKA-DASHBOARD-001", "ART-MATOKA-SYNC-001", "ART-MATOKA-SCHEMA-001"],
+      "suggestion_refs": [],
+      "conflict_refs": [],
+      "writeback_payload": {
+        "chats": [],
+        "evidence": [],
+        "suggestions": [],
+        "decisions": [],
+        "artifacts": [
+          {
+            "artifact_id": "ART-MATOKA-DASHBOARD-001",
+            "scope": "technical.dashboard",
+            "logical_id": "MATOKA_SALES_DASHBOARD",
+            "version": 1,
+            "path": "src/App.tsx",
+            "sha256": "bb6a3682c8c398fdcc35b71fdca7fd34437a02f0e91c4514cd904d02277c1a7a",
+            "status": "DRAFT",
+            "created_by_chat": "01-MATOKA-DASHBOARD",
+            "created_at": "2026-09-12T16:16:26+04:00",
+            "derived_from": [],
+            "requires_current_refs": [],
+            "approval_decision_id": null,
+            "previous_version": null,
+            "supersedes_active": null
+          },
+          {
+            "artifact_id": "ART-MATOKA-SYNC-001",
+            "scope": "technical.choice_sync",
+            "logical_id": "MATOKA_CHOICE_SYNC",
+            "version": 1,
+            "path": "supabase/functions/sync-choice/index.ts",
+            "sha256": "7160492ddd5d236eaced5ff60d157dbb8e3aa52d20350a631ed5315e0f940142",
+            "status": "DRAFT",
+            "created_by_chat": "01-MATOKA-DASHBOARD",
+            "created_at": "2026-09-12T16:16:26+04:00",
+            "derived_from": [],
+            "requires_current_refs": [],
+            "approval_decision_id": null,
+            "previous_version": null,
+            "supersedes_active": null
+          },
+          {
+            "artifact_id": "ART-MATOKA-SCHEMA-001",
+            "scope": "technical.database",
+            "logical_id": "MATOKA_SALES_SCHEMA",
+            "version": 1,
+            "path": "supabase/migrations/20260912120000_create_sales_snapshot.sql",
+            "sha256": "d57f29f4f389918e3b8acfde42cf94f38c4a40b4f5471114f8f8733dac85a88f",
+            "status": "DRAFT",
+            "created_by_chat": "01-MATOKA-DASHBOARD",
+            "created_at": "2026-09-12T16:16:26+04:00",
+            "derived_from": [],
+            "requires_current_refs": [],
+            "approval_decision_id": null,
+            "previous_version": null,
+            "supersedes_active": null
+          }
+        ],
+        "conflicts": []
+      },
+      "summary": "Implemented and verified isolated MATOKA dashboard, ChoiceQR sync, database schema, and hourly schedule.",
+      "next_action": "Review and approve the pull request after visual and live-data checks.",
+      "status": "COMPLETED",
+      "created_at": "2026-09-12T16:16:26+04:00",
+      "accepted_at": "2026-09-12T16:16:26+04:00",
+      "applied_revision": 2
+    }
+  ],
+  "conflicts": [],
+  "history": [
+    {
+      "event_id": "EVT-000001",
+      "revision": 1,
+      "event_type": "HUB_CREATED",
+      "entity_refs": ["PRJ-MATOKA-SALES-001"],
+      "at": "2026-09-12T16:08:03+04:00",
+      "by_chat": "01-MATOKA-DASHBOARD"
+    },
+    {
+      "event_id": "EVT-000002",
+      "revision": 2,
+      "event_type": "IMPLEMENTATION_COMPLETED",
+      "entity_refs": ["ART-MATOKA-DASHBOARD-001", "ART-MATOKA-SYNC-001", "ART-MATOKA-SCHEMA-001", "HND-20260912-001"],
+      "at": "2026-09-12T16:16:26+04:00",
+      "by_chat": "01-MATOKA-DASHBOARD"
+    }
+  ]
+}

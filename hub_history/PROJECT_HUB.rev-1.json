@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1",
+  "hub_status": "ACTIVE",
+  "project": {
+    "project_id": "PRJ-MATOKA-SALES-001",
+    "restaurant_id": "RST-MATOKA-PRAGUE-001",
+    "restaurant_name": "MATOKA",
+    "market": "CZ",
+    "hub_revision": 1,
+    "previous_hub_sha256": null,
+    "updated_at": "2026-09-12T16:08:03+04:00"
+  },
+  "current": {
+    "stage": "TECHNICAL_MIGRATION",
+    "stage_status": "IN_PROGRESS",
+    "next_action": "Complete isolated dashboard implementation and publish pull request",
+    "blocked_by": []
+  },
+  "current_route": {
+    "surface": "CODEX",
+    "model_profile": "STANDARD",
+    "selected_model": "GPT-5.6",
+    "reasoning": "full",
+    "skill": "foodies-work-router",
+    "outcome": "Isolated MATOKA sales dashboard with ChoiceQR synchronization",
+    "done_when": "Build passes, dedicated cloud database is provisioned, and pull request is open",
+    "writeback": "Implementation artifact and completion handoff",
+    "started_at": "2026-09-12T16:08:03+04:00"
+  },
+  "truth_heads": {},
+  "chats": [
+    {
+      "chat_id": "01-MATOKA-DASHBOARD",
+      "title": "MATOKA sales dashboard migration",
+      "surface": "CODEX",
+      "purpose": "Build and deliver isolated MATOKA sales dashboard",
+      "stage": "TECHNICAL_MIGRATION",
+      "model_profile": "STANDARD",
+      "status": "ACTIVE",
+      "last_handoff_id": null
+    }
+  ],
+  "evidence": [],
+  "suggestions": [],
+  "decisions": [],
+  "artifacts": [],
+  "handoffs": [],
+  "conflicts": [],
+  "history": [
+    {
+      "event_id": "EVT-000001",
+      "revision": 1,
+      "event_type": "HUB_CREATED",
+      "entity_refs": ["PRJ-MATOKA-SALES-001"],
+      "at": "2026-09-12T16:08:03+04:00",
+      "by_chat": "01-MATOKA-DASHBOARD"
+    }
+  ]
+}
